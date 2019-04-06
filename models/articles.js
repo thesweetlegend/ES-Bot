@@ -1,5 +1,11 @@
-var sqlite3 = require("sqlite3").verbose();
-var db = new sqlite3.Database("database.db");
+var mysql = require('mysql');
+
+var db = mysql.createConnection({
+  host: "45.40.136.18",
+  user: "jqlghxv7_userES",
+  password: "Password123",
+  database: "esport_db"
+});
 
 // Return all of the articles
 function getAllArticles(callback)
