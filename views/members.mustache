@@ -1,0 +1,41 @@
+{{>header}}
+
+{{>navigation}}
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>Profile Page</h2>
+      <p>Update your information here.</p>
+      <p><strong>{{ message }}</strong></p>
+     <form action="/update" method="post">
+        <div class="username">
+          <label for="username">Username:</label>
+          <div class="form-inline">
+            <input type="text" name="username" class="form-control">
+            <input type="submit" class="btn btn-danger" value="Update">
+          </div>
+        </div> <br /> <br />
+        <div class="password">
+          <label for="password">Password:</label>
+          <div class="form-inline">
+            <input type="text" name="password" class="form-control">
+            <input type="submit" class="btn btn-danger" value="Update">
+          </div>
+        </div> <br /> <br />
+        <div class="email">
+          <label for="email">Email:</label>
+          <div class="form-inline">
+            <input type="text" name="email" class="form-control">
+            <input type="submit" class="btn btn-danger" value="Update">
+          </div>
+        </div> <br /> <br />
+      </form> <br />
+    </div>
+  </div>
+
+  {{>sidebar}}
+
+</div>
+
+{{>footer}}

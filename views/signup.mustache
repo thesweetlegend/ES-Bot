@@ -1,0 +1,33 @@
+{{>header}}
+
+{{>navigation}}
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+    
+
+      <h2>Sign-up for an account</h2>
+      <p style="color:red;">{{ login_error }}</p>
+  {{#valRed}}
+    <h3>User account created! <a href='/login'>Login</a> to access your new account.</h3>
+  {{/valRed}} 
+  <div class="form-group">
+      <form action="/login/addUser" method="post">
+        <label for="username">Username:</label>
+        <input type="text" name="username" class="form-control"> <br /> <br />
+        <label for="password">Password:</label>
+        <input type="text" name="password" class="form-control"> <br /> <br />
+        <label for="email">Email:</label>
+        <input type="text" name="email" class="form-control"> <br /> <br />
+        <label for="confirmEmail">Confirm Email:</label>
+        <input type="text" name="email" class="form-control"> <br /> <br />
+        <input type="submit" class="btn btn-danger" value="Login">
+      </form> <br />
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{{>footer}}

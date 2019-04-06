@@ -1,0 +1,19 @@
+{
+  "name": "partials",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-mustache": "^1.0.4",
+    "express-session": "^1.15.6",
+    "mustache-express": "^1.2.8",
+    "nodemon": "^1.18.10",
+    "sqlite3": "^4.0.6"
+  }
+}

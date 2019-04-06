@@ -1,0 +1,35 @@
+{{>header}}
+
+{{>navigation}}
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>Admin Page</h2>
+      <p>Edit, add and remove users.</p>
+      <h3>Users</h3>
+  <table class="table">
+    <tr>
+      <th>Username </th>
+      <th>Password </th>
+      <th>Level </th>
+      <th>Email </th>
+      <th>Delete</th>
+    </tr>
+    {{#user}}
+    <tr>
+      <td>{{username}}</td>
+      <td>{{password}}</td>
+      <td>{{level}}</td>
+      <td>{{email}}</td>
+      <td><a href="/editors/delUser/{{username}}">D</a></td>
+    </tr>
+    {{/user}}
+  </table>
+    </div>
+  </div>
+  {{>sidebar}}
+
+</div>
+
+{{>footer}}

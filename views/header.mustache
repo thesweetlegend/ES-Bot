@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" type="image/png" href="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/dota-2-icon.png">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+h2 {
+  font-family: 'trajanbold', 
+  Arial, 
+  sans-serif; 
+  font-size: 30px;
+  color: black;
+}
+
+body {
+  font-family: 'hypatiasans', 
+  Arial, 
+  sans-serif;
+  padding: 10px;
+  background: #000000;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: #21201f;
+}
+
+.header h1 {
+  font-family: 'trajanbold', 
+  Arial, 
+  sans-serif; 
+  font-size: 50px;
+  color: white;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Class for currently selected navigation item  */
+.curnav {
+  background-color: #777;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+  padding-left: 16px;
+}
+
+/* Right column */
+.rightcolumn {
+  text-align: center;
+  float: left;
+  width: 25%;
+  background-color: #000000;
+  padding-right: 16px;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #B22222;
+  margin-top: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #333;
+  color: white;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@font-face {
+    font-family: 'trajanbold';
+    src: url('/fonts/trajan_bold-webfont.woff2') format('woff2'),
+         url('/fonts/trajan_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'hypatiasans';
+    src: url('/fonts/HypatiaSansPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+<title>ES-Bot</title>
+</head>
+<body>
+
+<div class="header">
+  <h1>ES-Bot</h1>
+</div>
