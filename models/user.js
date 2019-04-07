@@ -25,7 +25,7 @@ function userLogin(user, callback)
 function userAdd(user)
 {
     db.run("INSERT INTO Users VALUES (?,?,'member');",
-    [user.username, user.password],
+    [user.username, user.password, user.email],
     function(err) {});
 }
 
