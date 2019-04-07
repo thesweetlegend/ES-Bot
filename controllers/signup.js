@@ -37,7 +37,7 @@ router.post("/registerUser", function (req, res, next) {
   // display the SignUp page again
   function createSignUpPage()
   {
-    //  console.log("We Are Back");
+    //  success message;
       
     req.TPL.message = "User successfully created as Member ";
     res.render("signup", req.TPL);
