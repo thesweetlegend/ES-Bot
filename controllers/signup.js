@@ -2,38 +2,49 @@ const express = require('express');
 var router = express.Router();
 const ArticlesModel = require('../models/articles.js');
 const usersModel = require('../models/users.js');
-var sqlite3 = require("sqlite3").verbose();
-var db = new sqlite3.Database("database.db"),
-    fs = require('fs');
 
+var mysql = require('mysql');
 
+var con = mysql.createConnection({
+  host: "45.40.136.18",
+  user: "jqlghxv7_userES",
+  password: "Password123",
+  database: "esport_db"
+});
 
-function writeData(req) {
-    let data = new Date() + "," + req.path + "," + req.ip + "," + JSON.stringify(req.query) + "," + JSON.stringify(req.body) + "\n";
-    let path = "logs.txt";
-    console.log(path);
-    // var originalImage = Buffer.from(image, "base64");
-    fs.appendFile(path, data, function (err) {
-        if (err) {
-            console.log("Data could not be written to File due to error ", err);
-        }
-        else {
-            console.log("data written to file", data);
-        }
-    });
-}
-// Displays the login page
+router.post('
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  var sql = "INSERT INTO Users (username, password, email) VALUES ('Company Inc', 'Highway 37')";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+	
+  });
+});
+
+// Register users to database
 router.get("/", function (req, res) {
     writeData(req);
     console.log("In SignUp Page");
     res.render("signup", req.TPL);
 
 });
-router.post("/registerUser", function (req, res) {
-    writeData(req);
-    console.log("About to register a user");
-   // console.log(req.body);
-    
+router.post("/registerUser", function (req, res, next) {
+	console.log(req.body.username);
+    console.log(req.body.password);
+    console.log(req.body.email);
+    con.connect(function(err) {
+  if (err) throw  err;
+  console.log("connected");
+  var sql = "INSERT INTO `Users`(`LastName`,`password`, `email`) VALUES ('"+req.body.username+"','"+req.body.password+"','"+req.body.email+"')";
+  con.query(sql, function(err, result)  {
+   if(err) throw err;
+   console.log("table created");
+  });
+});
+
     // Insert a message that a user has successfully been created and
   // display the SignUp page again
   function createSignUpPage()
@@ -44,7 +55,8 @@ router.post("/registerUser", function (req, res) {
     res.render("signup", req.TPL);
   }
 
-  usersModel.createUser(req.body.username,req.body.email,req.body.password,'member',createSignUpPage);
+  usersModel.createUser(req.body.username,req.body.password,req.body.email,'member',createSignUpPage);
 });
 
 module.exports = router;
+
