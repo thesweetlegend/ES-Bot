@@ -49,6 +49,8 @@ app.use("/enterchat",
         function(req,res,next) { req.TPL.enternav = true; next(); });
 app.use("/chatbot",
         function(req,res,next) { req.TPL.enternav = true; next(); });
+app.use("/teams",
+        function(req,res,next) { req.TPL.teamnav = true; next(); });
 
 // protect access to the members page, re-direct user to home page if nobody
 // is logged in...
@@ -95,6 +97,7 @@ app.use("/editors", require("./controllers/editors"),logHistory);
 app.use("/login", require("./controllers/login"),logHistory);
 app.use("/enterchat", require("./controllers/enterchat"),logHistory);
 app.use("/chatbot", require("./controllers/chatbot"),logHistory);
+app.use("/teams", require("./controllers/teams"),logHistory);
 
 
 
