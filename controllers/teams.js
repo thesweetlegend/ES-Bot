@@ -1,6 +1,6 @@
 const express = require('express');
-var router = express.Router()
-const ArticlesModel = require('../models/articles.js')
+var router = express.Router();
+const ArticlesModel = require('../models/teams.js')
 
 
 // Display the articles page
@@ -12,7 +12,7 @@ router.get("/", function(req, res)
   {
     console.log(results);
     req.TPL.articles = results;
-    res.render("articles",
+    res.render("teams",
                req.TPL);
   }
 

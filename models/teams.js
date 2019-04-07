@@ -10,7 +10,7 @@ var db = mysql.createConnection({
 // Return all of the articles
 function getAllArticles(callback)
 {
-  db.query("SELECT * FROM Heroes",
+  db.query("SELECT * FROM Team;",
   	     function(err,results) { callback(results); });
 }
 
